@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="130"
+    android:versionName="5.22"
+    package="com.foss.fota">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <permission
+        android:name="com.foss.fota.permission"
+        android:protectionLevel="normal"/>
+    <uses-permission android:name="com.foss.fota.permission"/>
+    <permission
+        android:name="com.foss.fota.get_content_permission"
+        android:protectionLevel="normal"/>
+    <uses-permission android:name="com.foss.fota.get_content_permission"/>
+    <application
+        android:theme="@style/Base.AppTheme"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="com.foss.fota.MyApplication"
+        android:allowBackup="false"
+        android:largeHeap="true"
+        android:supportsRtl="true">
+        <meta-data
+            android:name="UID"
+            android:value="foss_fota5"/>
+        <meta-data
+            android:name="CID"
+            android:value="foss"/>
+        <meta-data
+            android:name="PID"
+            android:value="fota5"/>
+        <activity
+            android:theme="@style/Main.AppTheme"
+            android:label="@string/app_name"
+            android:name="com.foss.fota.GoogleOtaClient"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="com.foss.fota.SettingActivity"
+            android:excludeFromRecents="true"/>
+        <activity
+            android:name="com.foss.fota.FileBrowserActivity"
+            android:excludeFromRecents="true"/>
+        <activity
+            android:name="com.foss.fota.SdcardUpdateActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:theme="@style/AppUIStyle.TranslucentActivity"
+            android:name="com.foss.fota.InstallResultActivity"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"/>
+        <activity
+            android:theme="@style/AppUIStyle.TranslucentActivity"
+            android:name="com.foss.fota.FotaPopInstallWindow"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"/>
+        <activity
+            android:theme="@style/AppUIStyle.TranslucentActivity"
+            android:name="com.foss.fota.FotaPopWindow"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"/>
+        <activity
+            android:theme="@style/AppUIStyle.TranslucentActivity"
+            android:name="com.foss.fota.ShortCutActivity"/>
+        <receiver
+            android:name="com.foss.fota.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_REMOVED"/>
+                <action android:name="android.intent.action.MEDIA_BAD_REMOVAL"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.foss.fota.custom_service"/>
+                <action android:name="com.foss.fota.job_scheduler"/>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.foss.fota.MyIntentService"
+            android:exported="false"/>
+        <service
+            android:name="com.foss.fota.TaskIntentService"
+            android:exported="false"/>
+        <service
+            android:name="com.foss.fota.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name="com.foss.fota.BatteryService"
+            android:exported="false"/>
+        <service
+            android:name="com.foss.fota.JobServiceUtil.MyIntentJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <service
+            android:name="com.foss.fota.JobServiceUtil.TaskIntentJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <provider
+            android:name="com.foss.fota.MyContentProvider"
+            android:readPermission="com.foss.fota.get_content_permission"
+            android:exported="true"
+            android:authorities="com.foss.fota.MyContentProvider"
+            android:grantUriPermissions="true"/>
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0"/>
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>

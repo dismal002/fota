@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RadioGroup
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/RadioButton1"
+            android:text="@string/setting_autocheck_schedule1"
+            style="@style/AppUIStyle.RadioBtn"/>
+        <RadioButton
+            android:id="@+id/RadioButton2"
+            android:text="@string/setting_autocheck_schedule2"
+            style="@style/AppUIStyle.RadioBtn"/>
+        <RadioButton
+            android:id="@+id/RadioButton3"
+            android:text="@string/setting_autocheck_schedule3"
+            style="@style/AppUIStyle.RadioBtn"/>
+    </RadioGroup>
+</LinearLayout>

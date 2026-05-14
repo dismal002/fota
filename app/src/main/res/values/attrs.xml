@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bg_color" format="color" />
+    <attr name="content" format="string" />
+    <attr name="desc" format="string" />
+    <attr name="desc_margin_top" format="dimension" />
+    <attr name="desc_text_size" format="dimension" />
+    <attr name="force_color" format="color" />
+    <attr name="normal_color" format="color" />
+    <attr name="progress_margin_bottom" format="dimension" />
+    <attr name="progress_text_size" format="dimension" />
+    <attr name="showBox" format="boolean" />
+    <attr name="stroke_width" format="dimension" />
+    <attr name="sweep_start" format="integer" />
+    <attr name="text_font_color" format="color" />
+    <attr name="usable_margin_top" format="dimension" />
+    <attr name="usable_text_size" format="dimension" />
+
+    <declare-styleable name="TitleContentView">
+        <attr name="content" />
+        <attr name="showBox" />
+        <attr name="desc" />
+    </declare-styleable>
+</resources>
