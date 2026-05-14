@@ -1,5 +1,4 @@
-# FOTA Application Configuration Guide for OEM/ODM Partners
-
+# FOTA Application Configuration Guide
 This guide outlines the system properties and code-level configurations that partners can use to customize the FOTA (Firmware Over-The-Air) application for their specific hardware and regional requirements.
 
 ## 1. System Configuration (build.prop)
