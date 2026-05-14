@@ -1,7 +1,5 @@
 package com.foss.fota.update.download;
 
-/* JADX INFO: compiled from: IDownloadListener.java */
-/* JADX INFO: loaded from: classes.dex */
 public interface IDownloadListener {
     void onStart(String str);
 

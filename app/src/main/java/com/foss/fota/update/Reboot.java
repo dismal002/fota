@@ -7,8 +7,6 @@ import com.foss.fota.utils.Trace;
 import com.foss.fota.utils.NotifyManager;
 import com.foss.fota.utils.PreferencesUtils;
 
-/* JADX INFO: compiled from: Reboot.java */
-/* JADX INFO: loaded from: classes.dex */
 public class Reboot {
     public void performStartupCheck(Context context) {
         try {

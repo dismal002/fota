@@ -48,7 +48,6 @@ import java.util.Locale;
 import org.apache.commons.compress.archivers.zip.UnixStat;
 import com.foss.fota.update.query.QueryVersion;
 
-/* JADX INFO: loaded from: classes.dex */
 public class GoogleOtaClient extends BaseActivity {
     private static final String[] c = {"android.permission.READ_PHONE_STATE", "android.permission.GET_ACCOUNTS"};
     private ProgressBar progressBar;
@@ -450,7 +449,6 @@ public class GoogleOtaClient extends BaseActivity {
         this.handler.removeCallbacksAndMessages(null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void checkUpdateAction() {
         boolean zA = NetWorkUtil.isConnected(this);
         Trace.d("isConnected = " + zA);
@@ -647,7 +645,6 @@ public class GoogleOtaClient extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void updateTextView() {
         Trace.d("enter");
         this.materialDialog = new MaterialDialog.Builder(this).a(R.layout.dialog_update_unzip, false).a(false).c();
@@ -655,7 +652,6 @@ public class GoogleOtaClient extends BaseActivity {
         com.foss.fota.update.install.Install.contentLayout(getApplicationContext());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void progressTextView() {
         Trace.d("enter");
         Status.a(this, 0);
@@ -757,7 +753,6 @@ public class GoogleOtaClient extends BaseActivity {
         this.materialDialog.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void setQueryType(int type) {
         Trace.d("delay time: " + this.d[type]);
         PreferencesUtils.putInt(this, "ota_install_delay_schedule", this.d[type]);
@@ -814,7 +809,6 @@ public class GoogleOtaClient extends BaseActivity {
         this.materialDialog.show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void E() {
         final String str = getFilesDir().getParent() + "/shared_prefs/fossfota.xml";
         if (!"mounted".equals(Environment.getExternalStorageState())) {
@@ -839,7 +833,6 @@ public class GoogleOtaClient extends BaseActivity {
         Toast.makeText(this, getString(R.string.export_data) + " to " + file.getAbsolutePath(), 0).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void F() {
         if (!"mounted".equals(Environment.getExternalStorageState())) {
             Toast.makeText(this, R.string.sdcard_crash_or_unmount, 0).show();
@@ -857,7 +850,6 @@ public class GoogleOtaClient extends BaseActivity {
         Toast.makeText(this, getString(R.string.start_catch_log) + " to " + file.getAbsolutePath(), 1).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void G() {
         Trace.setDebugEnabled(false);
         PreferencesUtils.putBoolean((Context) this, "debug_status", false);
@@ -1197,7 +1189,6 @@ public class GoogleOtaClient extends BaseActivity {
         this.abView.setVisibility(8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void c(int updateTipTextView) {
         switch (updateTipTextView) {
             case 1:
@@ -1264,7 +1255,6 @@ public class GoogleOtaClient extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void K() {
         Trace.d("enter");
         if (NetWorkUtil.isConnected(this)) {
@@ -1287,7 +1277,6 @@ public class GoogleOtaClient extends BaseActivity {
         com.foss.fota.update.report.ReportData.reportQuery(this, "delay");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public boolean N() {
         String strB = PreferencesUtils.contentLayout(this, "ota_check_once_day", "");
         String str = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());

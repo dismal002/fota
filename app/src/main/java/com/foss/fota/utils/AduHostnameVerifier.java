@@ -12,8 +12,6 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 
-/* JADX INFO: compiled from: AduHostnameVerifier.java */
-/* JADX INFO: loaded from: classes.dex */
 public final class AduHostnameVerifier implements HostnameVerifier {
     public static final AduHostnameVerifier INSTANCE = new AduHostnameVerifier();
     private static final Pattern IP_ADDRESS_PATTERN = Pattern.compile("([0-9a-fA-F]*:[0-9a-fA-F:.]*)|([\\d.]+)");

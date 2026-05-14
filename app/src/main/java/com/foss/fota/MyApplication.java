@@ -14,7 +14,6 @@ import com.foss.fota.utils.OkHttpUtil;
 import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.utils.StorageUtil;
 
-/* JADX INFO: loaded from: classes.dex */
 public class MyApplication extends Application {
     private static Context context;
 

@@ -3,7 +3,6 @@ package com.foss.fota.utils;
 import android.util.Log;
 import com.foss.fota.utils.FileUtil;
 
-/* JADX INFO: loaded from: classes.dex */
 public class Trace {
     public static boolean a = true;
     private static boolean b = true;

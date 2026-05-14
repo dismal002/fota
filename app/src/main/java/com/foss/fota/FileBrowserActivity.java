@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Stack;
 
-/* JADX INFO: loaded from: classes.dex */
 public class FileBrowserActivity extends BaseActivity {
     private static int d;
     boolean b = false;
@@ -167,7 +166,6 @@ public class FileBrowserActivity extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public List<b> l() throws Throwable {
         ArrayList arrayList = new ArrayList();
         new File(this.h).listFiles();
@@ -223,7 +221,6 @@ public class FileBrowserActivity extends BaseActivity {
         return fileArrListFiles;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
         Intent intent = new Intent();
         intent.putExtra("selected_file", str);
@@ -308,7 +305,6 @@ public class FileBrowserActivity extends BaseActivity {
             return view;
         }
 
-        /* JADX INFO: renamed from: com.foss.fota.FileBrowserActivity$a$a, reason: collision with other inner class name */
         public final class C0013a {
             public ImageView a;
             public TextView b;

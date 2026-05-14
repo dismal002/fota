@@ -28,8 +28,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* JADX INFO: compiled from: ReportManager.java */
-/* JADX INFO: loaded from: classes.dex */
 public class ReportManager {
     private static ExecutorService executor;
     private static Context context;

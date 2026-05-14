@@ -2,7 +2,6 @@ package com.foss.fota.utils;
 
 import java.util.List;
 
-/* JADX INFO: loaded from: classes.dex */
 public class RootErrJson {
     private List<String> add;
     private List<String> delete;

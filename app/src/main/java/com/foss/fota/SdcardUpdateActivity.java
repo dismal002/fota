@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* JADX INFO: loaded from: classes.dex */
 public class SdcardUpdateActivity extends BaseActivity {
     private static ExecutorService executorService;
     Button installButton;
@@ -190,7 +189,6 @@ public class SdcardUpdateActivity extends BaseActivity {
         this.installButton.setOnClickListener(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void showLoadingDialog() {
         this.materialDialog = new MaterialDialog.Builder(this).a(R.layout.dialog_loading_copy_file, false).a(false).c();
     }
@@ -261,7 +259,6 @@ public class SdcardUpdateActivity extends BaseActivity {
         return i == 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void doUpdate() {
         StorageUtil.a(this);
         Trace.d("SdcardUpdateActivity:", "doUpdate:: selected_file " + this.selectedFile);
@@ -360,7 +357,6 @@ public class SdcardUpdateActivity extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void startUpdateProcess() {
         if (!com.foss.fota.update.install.Install.checkFile(this)) {
             this.materialDialog = new MaterialDialog.Builder(this).b(R.string.not_support_fota_title).a(R.string.not_support_version).selectedFile(R.string.btn_ok).c();
@@ -400,7 +396,6 @@ public class SdcardUpdateActivity extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public String getSdcardPath(String str) {
         if (str != null) {
             String strB = StorageUtil.b(this, str);

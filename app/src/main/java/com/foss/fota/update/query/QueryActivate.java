@@ -8,8 +8,6 @@ import com.foss.fota.utils.FileUtil;
 import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.utils.DeviceUtil;
 
-/* JADX INFO: compiled from: QueryActivate.java */
-/* JADX INFO: loaded from: classes.dex */
 public class QueryActivate {
     public static boolean isActivated(Context context) {
         long t = DeviceUtil.getInstance().getActivateTime();

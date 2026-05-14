@@ -15,7 +15,6 @@ import com.foss.fota.MyApplication;
 import com.foss.fota.update.query.QueryInfo;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class BaseBatteryService extends Service {
     private String a;
 

@@ -16,8 +16,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/* JADX INFO: compiled from: DeviceInfoProvider.java */
-/* JADX INFO: loaded from: classes.dex */
 public class DeviceInfoProvider {
     private static DeviceInfoProvider instance = null;
     private TelephonyManager telephonyManager;

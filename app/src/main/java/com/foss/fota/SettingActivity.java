@@ -16,7 +16,6 @@ import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.view.TitleContentView;
 import java.io.Serializable;
 
-/* JADX INFO: loaded from: classes.dex */
 public class SettingActivity extends BaseActivity {
     private static final String b = SettingActivity.class.getSimpleName();
     private RelativeLayout autoCheckLayout;
@@ -96,7 +95,6 @@ public class SettingActivity extends BaseActivity {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void startNormalQuery(int type) {
         int i2 = R.string.setting_autocheck_schedule1;
         this.scheduleIndex = type;

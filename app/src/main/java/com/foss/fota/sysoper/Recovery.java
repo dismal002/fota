@@ -26,7 +26,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.compress.archivers.zip.UnixStat;
 
-/* JADX INFO: loaded from: classes.dex */
 public class Recovery {
     private static IRecoveryCallback mCallback;
     private static ServiceConnection serviceConnection;
@@ -295,7 +294,6 @@ public class Recovery {
         }).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void abFail(int i, boolean z) {
         Trace.d("abFail,enter");
         if (i == 20) {
@@ -310,7 +308,6 @@ public class Recovery {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void abSuccess() {
         Trace.d("abSuccess enter");
         PreferencesUtils.putInt(MyApplication.getInstance(), "ota_update_status", 6);

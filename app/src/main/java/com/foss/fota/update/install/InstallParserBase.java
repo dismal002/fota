@@ -2,8 +2,6 @@ package com.foss.fota.update.install;
 
 import android.content.Context;
 
-/* JADX INFO: compiled from: InstallParserBase.java */
-/* JADX INFO: loaded from: classes.dex */
 public class InstallParserBase {
     public static final String a = InstallParserBase.class.getSimpleName();
     public String b;

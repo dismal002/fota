@@ -7,7 +7,6 @@ import android.os.Bundle;
 import com.foss.fota.MaterialDialog;
 import com.foss.fota.utils.PreferencesUtils;
 
-/* JADX INFO: loaded from: classes.dex */
 public class FotaPopInstallWindow extends Activity {
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
@@ -35,7 +34,6 @@ public class FotaPopInstallWindow extends Activity {
         }).c();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         c();
         startActivity(new Intent(this, (Class<?>) GoogleOtaClient.class));

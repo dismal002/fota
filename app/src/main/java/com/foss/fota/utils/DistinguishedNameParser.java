@@ -2,8 +2,6 @@ package com.foss.fota.utils;
 
 import javax.security.auth.x500.X500Principal;
 
-/* JADX INFO: compiled from: DistinguishedNameParser.java */
-/* JADX INFO: loaded from: classes.dex */
 public final class DistinguishedNameParser {
     private final String dn;
     private final int length;

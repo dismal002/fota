@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
-/* JADX INFO: compiled from: ScreenUtils.java */
-/* JADX INFO: loaded from: classes.dex */
 public class ScreenUtils {
     public static float a(Context context, float f) {
         if (context == null) {

@@ -10,7 +10,6 @@ import com.foss.fota.update.Notice;
 import com.foss.fota.update.query.QueryVersion;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class TaskIntentService extends BaseService {
     public TaskIntentService() {
         super("AlarmIntentService");

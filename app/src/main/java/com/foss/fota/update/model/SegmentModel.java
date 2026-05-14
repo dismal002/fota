@@ -1,6 +1,5 @@
 package com.foss.fota.update.model;
 
-/* JADX INFO: loaded from: classes.dex */
 public class SegmentModel {
     private long enddec;
     private String key;

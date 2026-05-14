@@ -10,8 +10,6 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
 
-/* JADX INFO: compiled from: NetWorkUtil.java */
-/* JADX INFO: loaded from: classes.dex */
 public class NetWorkUtil {
     public static boolean isConnected(Context context) {
         NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity"))

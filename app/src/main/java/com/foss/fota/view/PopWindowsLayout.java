@@ -25,8 +25,6 @@ import com.foss.fota.utils.ScreenUtils;
 import de.greenrobot.event.EventBus;
 import java.util.Locale;
 
-/* JADX INFO: compiled from: PopWindowsLayout.java */
-/* JADX INFO: loaded from: classes.dex */
 public class PopWindowsLayout {
     private PopupWindow a;
     private View b;

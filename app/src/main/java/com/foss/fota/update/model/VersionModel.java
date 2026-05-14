@@ -3,7 +3,6 @@ package com.foss.fota.update.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: classes.dex */
 public class VersionModel {
     private long deltaId;
     private String deltaurl;

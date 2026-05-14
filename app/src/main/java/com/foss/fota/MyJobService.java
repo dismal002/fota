@@ -21,7 +21,6 @@ import com.foss.fota.utils.DeviceUtil;
 import com.foss.fota.utils.IntentUtil;
 import com.foss.fota.utils.PreferencesUtils;
 
-/* JADX INFO: loaded from: classes.dex */
 @TargetApi(21)
 public class MyJobService extends JobService {
     public static final long MINUTE_UNIT = 60000;

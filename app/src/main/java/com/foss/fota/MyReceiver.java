@@ -13,7 +13,6 @@ import com.foss.fota.utils.Trace;
 import com.foss.fota.utils.IntentUtil;
 import com.foss.fota.utils.NetWorkUtil;
 
-/* JADX INFO: loaded from: classes.dex */
 public class MyReceiver extends BroadcastReceiver implements RequestBase.RequestCallback {
 
     @Override // android.content.BroadcastReceiver

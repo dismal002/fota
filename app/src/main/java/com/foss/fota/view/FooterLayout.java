@@ -13,7 +13,6 @@ import com.foss.fota.utils.FileUtil;
 import com.foss.fota.update.model.VersionModel;
 import java.util.Locale;
 
-/* JADX INFO: loaded from: classes.dex */
 public class FooterLayout extends LinearLayout {
     TextView a;
     TextView b;

@@ -8,8 +8,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 
-/* JADX INFO: compiled from: GetPkgSignatureHash.java */
-/* JADX INFO: loaded from: classes.dex */
 public class GetPkgSignatureHash {
     private String a(byte[] bArr, String str) {
         StringBuilder sb = new StringBuilder();

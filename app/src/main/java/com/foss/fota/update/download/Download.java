@@ -3,8 +3,6 @@ package com.foss.fota.update.download;
 import android.content.Context;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: compiled from: Download.java */
-/* JADX INFO: loaded from: classes.dex */
 public class Download {
     protected Context context;
     protected long startTime;

@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-/* JADX INFO: loaded from: classes.dex */
 public class ProgressLayout extends LinearLayout {
     ImageView a;
     RelativeLayout b;

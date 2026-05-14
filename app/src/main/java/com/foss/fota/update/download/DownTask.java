@@ -20,8 +20,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* JADX INFO: compiled from: DownTask.java */
-/* JADX INFO: loaded from: classes.dex */
 public class DownTask {
     private IDownloadListener listener;
     private HashMap<String, String> headers;

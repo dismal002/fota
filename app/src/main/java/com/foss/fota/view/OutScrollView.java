@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
-/* JADX INFO: loaded from: classes.dex */
 public class OutScrollView extends ScrollView {
     float a;
     float b;

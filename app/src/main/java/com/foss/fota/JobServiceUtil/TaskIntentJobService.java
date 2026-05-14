@@ -9,7 +9,6 @@ import com.foss.fota.update.download.DownVersion;
 import com.foss.fota.update.query.QueryVersion;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class TaskIntentJobService extends JobService {
     @Override // android.app.job.JobService
     public boolean onStartJob(JobParameters jobParameters) {
@@ -33,7 +32,6 @@ public class TaskIntentJobService extends JobService {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void a(int i, int i2, String str) {
         Trace.d("task_id = " + i + "; status = ; value = " + str);
         switch (i) {

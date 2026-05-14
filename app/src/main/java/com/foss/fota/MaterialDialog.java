@@ -15,14 +15,11 @@ import android.widget.TextView;
 import com.foss.fota.utils.Trace;
 import com.foss.fota.config.Const;
 
-/* JADX INFO: compiled from: MaterialDialog.java */
-/* JADX INFO: loaded from: classes.dex */
 public class MaterialDialog extends Dialog {
     static TextView titleView;
     static Builder builder;
     private View contentView;
 
-    /* JADX INFO: compiled from: MaterialDialog.java */
     public interface DialogActionListener {
         void a(MaterialDialog aVar, DialogAction dialogAction);
     }
@@ -123,10 +120,6 @@ public class MaterialDialog extends Dialog {
         public static final String scheduleTextView = Const.GDPR_ACTIVITY;
     }
 
-    /* JADX INFO: renamed from: com.foss.fota.MaterialDialog$a, reason: collision with other inner class name */
-    /* JADX INFO: compiled from: MaterialDialog.java */
-        /* JADX INFO: renamed from: com.foss.fota.MaterialDialog$a, reason: collision with other inner class name */
-    /* JADX INFO: compiled from: MaterialDialog.java */
     public static class Builder {
         int a = GravityCompat.START;
         int b = GravityCompat.END;

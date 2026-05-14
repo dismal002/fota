@@ -14,8 +14,6 @@ import java.util.Random;
 import java.util.regex.Pattern;
 import org.apache.commons.compress.utils.CharsetNames;
 
-/* JADX INFO: compiled from: Mid.java */
-/* JADX INFO: loaded from: classes.dex */
 public class Mid {
     public static final String a = "http://www.baidu.com";
     public static final String b = "http://www.google.com";

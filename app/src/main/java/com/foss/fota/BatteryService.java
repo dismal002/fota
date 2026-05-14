@@ -12,7 +12,6 @@ import com.foss.fota.utils.NotifyManager;
 import com.foss.fota.R;
 import com.foss.fota.utils.PreferencesUtils;
 
-/* JADX INFO: loaded from: classes.dex */
 public class BatteryService extends BaseBatteryService {
     BroadcastReceiver a;
     private boolean b;

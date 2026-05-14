@@ -10,8 +10,6 @@ import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.utils.StorageUtil;
 import java.io.File;
 
-/* JADX INFO: compiled from: InstallParser1.java */
-/* JADX INFO: loaded from: classes.dex */
 public class InstallParser1 extends InstallParserBase {
     @Override // com.foss.fota.update.install.InstallParserBase
     public int a(Context context, String str, String str2) {

@@ -16,8 +16,6 @@ import com.foss.fota.update.report.ReportData;
 import de.greenrobot.event.EventBus;
 import java.io.File;
 
-/* JADX INFO: compiled from: DownPackage.java */
-/* JADX INFO: loaded from: classes.dex */
 public class DownPackage extends Download {
     private static DownPackage instance;
     private VersionModel versionModel;

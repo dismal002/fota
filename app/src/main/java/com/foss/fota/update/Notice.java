@@ -21,8 +21,6 @@ import com.foss.fota.utils.NotifyManager;
 import com.foss.fota.utils.PreferencesUtils;
 import java.util.List;
 
-/* JADX INFO: compiled from: Notice.java */
-/* JADX INFO: loaded from: classes.dex */
 public class Notice {
     public static void showUpdateNotice(Context context) {
         int noticeType = ((Integer) com.foss.fota.update.query.QueryInfo.getInstance(context).getPolicy("query_notice_type", Integer.class)).intValue();

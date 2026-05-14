@@ -12,7 +12,6 @@ import com.foss.fota.utils.NetWorkUtil;
 import com.foss.fota.utils.PreferencesUtils;
 import java.util.Random;
 
-/* JADX INFO: loaded from: classes.dex */
 public class MyIntentService extends BaseService {
     public MyIntentService() {
         super("MyIntentService");

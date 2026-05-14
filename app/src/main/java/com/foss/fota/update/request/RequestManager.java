@@ -5,8 +5,6 @@ import com.foss.fota.utils.Encrypt;
 import java.util.HashMap;
 import java.util.Map;
 
-/* JADX INFO: compiled from: RequestManager.java */
-/* JADX INFO: loaded from: classes.dex */
 public class RequestManager {
     private static RequestManager instance;
     private Context mContext;

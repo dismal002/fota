@@ -19,8 +19,6 @@ import com.foss.fota.utils.SecurityUtil;
 import de.greenrobot.event.EventBus;
 import java.util.HashMap;
 
-/* JADX INFO: compiled from: QueryVersion.java */
-/* JADX INFO: loaded from: classes.dex */
 public class QueryVersion {
     private static QueryVersion instance = null;
     private static int failCount = 0;
@@ -113,7 +111,6 @@ public class QueryVersion {
         startQuery(1, this.queryMode);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void performQueryTask() {
         try {
             try {

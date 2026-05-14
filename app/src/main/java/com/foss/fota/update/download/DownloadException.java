@@ -2,7 +2,6 @@ package com.foss.fota.update.download;
 
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class DownloadException extends Exception {
     private static final long serialVersionUID = 12874823278L;
     private int code;

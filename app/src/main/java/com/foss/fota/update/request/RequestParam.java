@@ -11,8 +11,6 @@ import com.foss.fota.utils.PackageUtils;
 import java.util.HashMap;
 import java.util.Map;
 
-/* JADX INFO: compiled from: RequestParam.java */
-/* JADX INFO: loaded from: classes.dex */
 public class RequestParam {
     private static final String TAG = RequestParam.class.getSimpleName();
 

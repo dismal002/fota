@@ -3,7 +3,6 @@ package com.foss.fota.sysoper;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* JADX INFO: loaded from: classes.dex */
 public class RecoveryParams implements Parcelable {
     public static final Parcelable.Creator<RecoveryParams> CREATOR = new Parcelable.Creator<RecoveryParams>() { // from class: com.foss.fota.sysoper.RecoveryParams.1
         /* JADX WARN: Can't rename method to resolve collision */

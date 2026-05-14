@@ -3,8 +3,6 @@ package com.foss.fota.utils;
 import java.security.MessageDigest;
 import org.apache.commons.compress.utils.CharsetNames;
 
-/* JADX INFO: compiled from: MD5Util.java */
-/* JADX INFO: loaded from: classes.dex */
 public class MD5Util {
     public static String a(String str) {
         try {

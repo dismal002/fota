@@ -1,7 +1,5 @@
 package com.foss.fota.utils;
 
-/* JADX INFO: compiled from: StringUtils.java */
-/* JADX INFO: loaded from: classes.dex */
 public class StringUtils {
     public static long a(String str) {
         byte[] bytes = str.getBytes();

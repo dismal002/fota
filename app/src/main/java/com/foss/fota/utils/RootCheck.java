@@ -24,8 +24,6 @@ import java.util.zip.ZipFile;
 import org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry;
 import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 
-/* JADX INFO: compiled from: RootCheck.java */
-/* JADX INFO: loaded from: classes.dex */
 public class RootCheck {
     private List<String> addedFiles;
     private List<String> modifiedFiles;

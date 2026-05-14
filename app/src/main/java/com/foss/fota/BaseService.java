@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Build;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class BaseService extends IntentService {
     private String a;
 

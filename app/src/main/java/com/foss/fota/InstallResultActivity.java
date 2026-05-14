@@ -6,7 +6,6 @@ import android.view.View;
 import com.foss.fota.MaterialDialog;
 import com.foss.fota.utils.Trace;
 
-/* JADX INFO: loaded from: classes.dex */
 public class InstallResultActivity extends BaseActivity {
     String b;
 
@@ -32,7 +31,6 @@ public class InstallResultActivity extends BaseActivity {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void g() {
         Trace.d("[showResultDialog] ============");
         new MaterialDialog.Builder(this).b(R.string.updateSuccessTitle).a(getString(R.string.updateSuccess, new Object[]{""})).e(R.string.ota_button_text_know).a(new MaterialDialog.DialogActionListener() { // from class: com.foss.fota.InstallResultActivity.2
