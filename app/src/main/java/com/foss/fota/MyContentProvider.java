@@ -6,6 +6,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 
+/* JADX INFO: loaded from: classes.dex */
 public class MyContentProvider extends ContentProvider {
     private UriMatcher a;
 

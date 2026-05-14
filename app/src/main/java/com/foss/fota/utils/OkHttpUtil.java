@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.security.Security;
 import java.util.concurrent.TimeUnit;
 
+/* JADX INFO: compiled from: OkHttpUtil.java */
+/* JADX INFO: loaded from: classes.dex */
 public class OkHttpUtil {
     private static final OkHttpClient client = new OkHttpClient();
 

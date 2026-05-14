@@ -16,6 +16,7 @@ import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.utils.DeviceInfoProvider;
 import java.util.Random;
 
+/* JADX INFO: loaded from: classes.dex */
 public class MyIntentJobService extends JobService {
     @Override // android.app.job.JobService
     public boolean onStartJob(JobParameters jobParameters) {

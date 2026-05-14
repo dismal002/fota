@@ -15,6 +15,8 @@ import java.util.zip.CheckedInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/* JADX INFO: compiled from: QueryRootVerify.java */
+/* JADX INFO: loaded from: classes.dex */
 public class QueryRootVerify {
     public static String a(String str) {
         try {

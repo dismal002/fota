@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.compress.archivers.zip.UnixStat;
 
+/* JADX INFO: loaded from: classes.dex */
 public class Recovery {
     private static IRecoveryCallback mCallback;
     private static ServiceConnection serviceConnection;
@@ -140,7 +141,7 @@ public class Recovery {
         }
         try {
             Intent intent = new Intent();
-            intent.setAction("android.intent.action.AdupsFota.Recovery");
+            intent.setAction("android.intent.action.FossFota.Recovery");
             Trace.d("connect()," + (intent == null) + ",,," + (getExplicitIntent(this.context, intent) == null));
             return this.context.bindService(new Intent(getExplicitIntent(this.context, intent)), serviceConnection, 1);
         } catch (Exception e) {
@@ -294,6 +295,7 @@ public class Recovery {
         }).start();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void abFail(int i, boolean z) {
         Trace.d("abFail,enter");
         if (i == 20) {
@@ -308,6 +310,7 @@ public class Recovery {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void abSuccess() {
         Trace.d("abSuccess enter");
         PreferencesUtils.putInt(MyApplication.getInstance(), "ota_update_status", 6);

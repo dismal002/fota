@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/* JADX INFO: compiled from: RequestBase.java */
+/* JADX INFO: loaded from: classes.dex */
 public class RequestBase {
     private String url;
 

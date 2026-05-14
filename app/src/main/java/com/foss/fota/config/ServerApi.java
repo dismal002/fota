@@ -1,5 +1,7 @@
 package com.foss.fota.config;
 
+/* JADX INFO: compiled from: ServerApi.java */
+/* JADX INFO: loaded from: classes.dex */
 public class ServerApi {
     public static final String PRIMARY_DOMAIN = "https://fota5t.foss.com";
     public static final String SECONDARY_DOMAIN = "https://fota5t.foss.cn";
@@ -9,4 +11,7 @@ public class ServerApi {
     public static final String FULL_QUERY_ENDPOINT = API_PATH + "fullDetectSchedule.do";
     public static final String REPORT_ENDPOINT = API_PATH + "submitReport.do";
     public static final String STATUS_REPORT_URL = REPORT_DOMAIN + "/euft/repsta";
+    
+    public static final String LEGACY_REBOOT_DOMAIN = "http://rebootv5.foss.com";
+    public static final String LEGACY_QUERY_URL = LEGACY_REBOOT_DOMAIN + "/ota/query";
 }

@@ -1,5 +1,7 @@
 package com.foss.fota.update;
 
+/* JADX INFO: compiled from: EventMessage.java */
+/* JADX INFO: loaded from: classes.dex */
 public class EventMessage {
     private int type;
     private int status;

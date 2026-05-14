@@ -12,6 +12,7 @@ import com.foss.fota.update.model.LanguageModel;
 import com.foss.fota.update.model.VersionModel;
 import java.util.ArrayList;
 
+/* JADX INFO: loaded from: classes.dex */
 public class FotaPopWindow extends Activity {
     private MaterialDialog materialDialog;
 

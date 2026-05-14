@@ -1,5 +1,7 @@
 package com.foss.fota.update.request;
 
+/* JADX INFO: compiled from: RequestResult.java */
+/* JADX INFO: loaded from: classes.dex */
 public class RequestResult {
     private boolean success;
     private int httpCode;

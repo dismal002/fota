@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.foss.fota.R;
 
+/* JADX INFO: loaded from: classes.dex */
 public class TitleContentView extends LinearLayout {
     private TextView a;
     private TextView b;

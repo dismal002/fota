@@ -15,6 +15,8 @@ import com.foss.fota.utils.DeviceInfoProvider;
 import org.apache.commons.compress.archivers.zip.UnixStat;
 import java.io.File;
 
+/* JADX INFO: compiled from: ReportData.java */
+/* JADX INFO: loaded from: classes.dex */
 public class ReportData {
     public static <T> String toJson(T t) {
         if (t != null) {

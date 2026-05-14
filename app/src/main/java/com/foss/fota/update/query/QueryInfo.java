@@ -13,6 +13,8 @@ import com.foss.fota.utils.StorageUtil;
 import java.util.HashMap;
 import java.util.List;
 
+/* JADX INFO: compiled from: QueryInfo.java */
+/* JADX INFO: loaded from: classes.dex */
 public class QueryInfo {
     private static QueryInfo instance = null;
     private static final String VERSION_JSON_FILENAME = "version.json";

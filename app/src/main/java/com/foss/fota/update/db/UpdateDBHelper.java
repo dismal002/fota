@@ -5,9 +5,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.foss.fota.utils.MD5;
 
+/* JADX INFO: compiled from: UpdateDBHelper.java */
+/* JADX INFO: loaded from: classes.dex */
 public class UpdateDBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "ota.db";
 
+    /* JADX INFO: compiled from: UpdateDBHelper.java */
     public static class a {
         public static final String a = "report";
         public static final String b = "CREATE TABLE IF NOT EXISTS " + a

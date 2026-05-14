@@ -19,6 +19,8 @@ import com.foss.fota.utils.Trace;
 import de.greenrobot.event.EventBus;
 import com.foss.fota.update.model.VersionModel;
 
+/* JADX INFO: compiled from: DownVersion.java */
+/* JADX INFO: loaded from: classes.dex */
 public class DownVersion {
     private static DownTask currentDownloadTask;
     private static DownVersion instance;

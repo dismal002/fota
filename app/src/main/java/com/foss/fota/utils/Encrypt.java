@@ -3,6 +3,8 @@ package com.foss.fota.utils;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 
+/* JADX INFO: compiled from: Encrypt.java */
+/* JADX INFO: loaded from: classes.dex */
 public class Encrypt {
     private static Encrypt instance = null;
 

@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import com.foss.fota.MaterialDialog;
 import com.foss.fota.utils.Trace;
 import com.foss.fota.utils.DeviceUtil;
@@ -16,6 +18,7 @@ import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.view.TitleContentView;
 import java.io.Serializable;
 
+/* JADX INFO: loaded from: classes.dex */
 public class SettingActivity extends BaseActivity {
     private static final String b = SettingActivity.class.getSimpleName();
     private RelativeLayout autoCheckLayout;
@@ -27,6 +30,9 @@ public class SettingActivity extends BaseActivity {
     private RelativeLayout loggingLayout;
     private CheckBox loggingCheckBox;
     private TitleContentView aboutView;
+    private RelativeLayout launcherIconLayout;
+    private CheckBox launcherIconCheckBox;
+    private RelativeLayout githubLayout;
     private int checkFrequency;
     private int scheduleIndex = 0;
     private MaterialDialog materialDialog;
@@ -65,6 +71,12 @@ public class SettingActivity extends BaseActivity {
             this.aboutView.setVisibility(0);
             this.aboutView.setOnClickListener(this);
         }
+        this.launcherIconLayout = (RelativeLayout) findViewById(R.id.setting_launcher_icon_layout);
+        this.launcherIconLayout.setOnClickListener(this);
+        this.launcherIconCheckBox = (CheckBox) findViewById(R.id.launcher_icon_checkbox);
+        this.launcherIconCheckBox.setOnClickListener(this);
+        this.githubLayout = (RelativeLayout) findViewById(R.id.setting_github_layout);
+        this.githubLayout.setOnClickListener(this);
     }
 
     private void autoDownloadLayout() {
@@ -79,6 +91,19 @@ public class SettingActivity extends BaseActivity {
         }
         boolean isLoggingEnabled = PreferencesUtils.getBoolean(this, "user_logging_enabled", false);
         this.loggingCheckBox.setChecked(isLoggingEnabled);
+        this.launcherIconCheckBox.setChecked(isLauncherIconEnabled());
+    }
+
+    private boolean isLauncherIconEnabled() {
+        ComponentName componentName = new ComponentName(this, "com.foss.fota.GoogleOtaClient");
+        int setting = getPackageManager().getComponentEnabledSetting(componentName);
+        return setting != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+    }
+
+    private void setLauncherIconEnabled(boolean enabled) {
+        ComponentName componentName = new ComponentName(this, "com.foss.fota.GoogleOtaClient");
+        int newState = enabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+        getPackageManager().setComponentEnabledSetting(componentName, newState, PackageManager.DONT_KILL_APP);
     }
 
     private void a(int aboutView) {
@@ -95,6 +120,7 @@ public class SettingActivity extends BaseActivity {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void startNormalQuery(int type) {
         int i2 = R.string.setting_autocheck_schedule1;
         this.scheduleIndex = type;
@@ -187,6 +213,14 @@ public class SettingActivity extends BaseActivity {
             intent.setComponent(componentName);
             intent.putExtra("param", (Serializable) com.foss.fota.update.request.RequestParam.autoCheckLayout(this));
             startActivityForResult(intent, 100);
+        } else if (view == this.launcherIconCheckBox) {
+            setLauncherIconEnabled(this.launcherIconCheckBox.isChecked());
+        } else if (view == this.launcherIconLayout) {
+            this.launcherIconCheckBox.setChecked(!this.launcherIconCheckBox.isChecked());
+            setLauncherIconEnabled(this.launcherIconCheckBox.isChecked());
+        } else if (view == this.githubLayout) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/foss-ota/AdupsFota"));
+            startActivity(intent);
         }
     }
 

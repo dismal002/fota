@@ -1,5 +1,6 @@
 package com.foss.fota.update.model;
 
+/* JADX INFO: loaded from: classes.dex */
 public class PolicyModel {
     private String key;
     private String message;

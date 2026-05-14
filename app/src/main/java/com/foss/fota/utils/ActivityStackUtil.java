@@ -2,6 +2,8 @@ package com.foss.fota.utils;
 
 import java.util.Stack;
 
+/* JADX INFO: compiled from: ActivityStackUtil.java */
+/* JADX INFO: loaded from: classes.dex */
 public class ActivityStackUtil {
     private static Stack a = new Stack();
     private static boolean b = false;

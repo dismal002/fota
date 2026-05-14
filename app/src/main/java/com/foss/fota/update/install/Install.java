@@ -34,12 +34,14 @@ public class Install {
         boolean isOldReboot = DeviceUtil.getInstance().isOldReboot();
         Trace.d("update file path = " + packagePath + "; isOldReboot " + isOldReboot);
         StorageUtil.init(context);
+        /* Removing insecure legacy broadcast mechanism
         if (isOldReboot) {
             Intent intent = new Intent("android.intent.action.AdupsFota.WriteCommandReceiver");
             intent.putExtra("PackageFileName", packagePath);
             context.sendBroadcast(intent);
             return true;
         }
+        */
         new Thread(new Runnable() {
             @Override
             public void run() {

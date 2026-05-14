@@ -6,6 +6,8 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import java.util.List;
 
+/* JADX INFO: compiled from: JsonTools.java */
+/* JADX INFO: loaded from: classes.dex */
 public class JsonTools {
     private static Gson a;
 

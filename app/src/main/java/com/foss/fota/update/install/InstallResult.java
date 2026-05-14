@@ -10,6 +10,8 @@ import com.foss.fota.utils.DeviceUtil;
 
 import com.foss.fota.config.Const;
 
+/* JADX INFO: compiled from: InstallResult.java */
+/* JADX INFO: loaded from: classes.dex */
 public class InstallResult {
     public static boolean didEnterRecovery(Context context) {
         boolean didEnterRecovery;

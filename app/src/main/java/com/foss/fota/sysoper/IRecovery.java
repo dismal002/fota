@@ -7,6 +7,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.foss.fota.sysoper.IRecoveryCallback;
 
+/* JADX INFO: loaded from: classes.dex */
 public interface IRecovery extends IInterface {
     int reboot() throws RemoteException;
 

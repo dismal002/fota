@@ -14,6 +14,7 @@ import com.foss.fota.utils.OkHttpUtil;
 import com.foss.fota.utils.PreferencesUtils;
 import com.foss.fota.utils.StorageUtil;
 
+/* JADX INFO: loaded from: classes.dex */
 public class MyApplication extends Application {
     private static Context context;
 
@@ -41,7 +42,8 @@ public class MyApplication extends Application {
     }
 
     public static boolean isImeiSupported() {
-        return isPrivacyPolicyInstalled() && isRejectStatus();
+        // IMEI is only authorized if privacy policy is installed AND user has NOT rejected it
+        return isPrivacyPolicyInstalled() && !isRejectStatus();
     }
 
     public static void updatePrivacyStatus() {
@@ -64,6 +66,10 @@ public class MyApplication extends Application {
         PreferencesUtils.putBoolean(context, "no_report", z);
     }
 
+    public static boolean isConnectNetAllowed() {
+        return PreferencesUtils.getBoolean(context, "connect_net", true);
+    }
+
     @Override // android.app.Application
     public void onCreate() {
         super.onCreate();
@@ -79,9 +85,8 @@ public class MyApplication extends Application {
         }
         String checkUrl = PreferencesUtils.getString(this, "check_url");
         Trace.d("initUrl = " + checkUrl);
-        // "http://rebootv5.foss.com" assumed for com.foss.fota.config.ServerApi.PRIMARY_DOMAIN
-        if (!TextUtils.isEmpty(checkUrl) && !checkUrl.equals("http://rebootv5.foss.com")) {
-            PreferencesUtils.putString(context, "check_url", "http://rebootv5.foss.com");
+        if (!TextUtils.isEmpty(checkUrl) && !checkUrl.equals(com.foss.fota.config.ServerApi.LEGACY_REBOOT_DOMAIN)) {
+            PreferencesUtils.putString(context, "check_url", com.foss.fota.config.ServerApi.LEGACY_REBOOT_DOMAIN);
         }
         DeviceInfoProvider.getInstance(this).getDeviceId(this);
         updatePrivacyStatus();

@@ -19,6 +19,8 @@ import com.foss.fota.utils.SecurityUtil;
 import de.greenrobot.event.EventBus;
 import java.util.HashMap;
 
+/* JADX INFO: compiled from: QueryVersion.java */
+/* JADX INFO: loaded from: classes.dex */
 public class QueryVersion {
     private static QueryVersion instance = null;
     private static int failCount = 0;
@@ -111,10 +113,17 @@ public class QueryVersion {
         startQuery(1, this.queryMode);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void performQueryTask() {
         try {
             try {
                 Trace.d("onQueryTask:start");
+                if (!com.foss.fota.MyApplication.isConnectNetAllowed()) {
+                    Trace.d("Privacy: query blocked because connect_net is false");
+                    this.isQuerying = false;
+                    EventBus.getDefault().post(new com.foss.fota.update.EventMessage(100, 3010, 0L, 0L, null));
+                    return;
+                }
                 EventBus.getDefault().post(new com.foss.fota.update.EventMessage(100, PointerIconCompat.TYPE_VERTICAL_TEXT, 0L, 0L, null));
                 Status.clearUpdateData(this.context);
                 if (PreferencesUtils.b(this.context, "ota_update_status", 0) == 0) {

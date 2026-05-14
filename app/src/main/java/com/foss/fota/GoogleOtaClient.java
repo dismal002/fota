@@ -48,6 +48,7 @@ import java.util.Locale;
 import org.apache.commons.compress.archivers.zip.UnixStat;
 import com.foss.fota.update.query.QueryVersion;
 
+/* JADX INFO: loaded from: classes.dex */
 public class GoogleOtaClient extends BaseActivity {
     private static final String[] c = {"android.permission.READ_PHONE_STATE", "android.permission.GET_ACCOUNTS"};
     private ProgressBar progressBar;
@@ -302,7 +303,7 @@ public class GoogleOtaClient extends BaseActivity {
         if (com.foss.fota.update.install.Install.getType()) {
             a(true, false);
             if (!com.foss.fota.update.install.Install.a(this)) {
-                Trace.d("no update reason : support ab update but not support reboot ab update");
+                Trace.d("Update Failed : AB update received but AB updates are not supported on this device");
                 EventBus.getDefault().post(new com.foss.fota.update.EventMessage(300, 100, 0L, 421L, "ab"));
                 return;
             }
@@ -314,12 +315,12 @@ public class GoogleOtaClient extends BaseActivity {
                 com.foss.fota.update.report.ReportData.reportQuery(this, "update");
                 com.foss.fota.update.install.Install.contentLayout(MyApplication.getInstance());
             } else {
-                Trace.d("no update reason : battery not enough");
+                Trace.d("Update Failed : low battery");
                 startService(new Intent(this, (Class<?>) BatteryService.class));
                 EventBus.getDefault().post(new com.foss.fota.update.EventMessage(300, 100, 0L, 417L, "ab"));
             }
         } else {
-            Trace.d("no update reason : not support ab update");
+            Trace.d("Update Failed : AB updates not supported");
         }
         this.progressLayout.setDownLoadProgress(100);
         Trace.d("exit");
@@ -449,6 +450,7 @@ public class GoogleOtaClient extends BaseActivity {
         this.handler.removeCallbacksAndMessages(null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void checkUpdateAction() {
         boolean zA = NetWorkUtil.isConnected(this);
         Trace.d("isConnected = " + zA);
@@ -596,14 +598,14 @@ public class GoogleOtaClient extends BaseActivity {
     private void preView() {
         Trace.d("enter");
         if (!com.foss.fota.update.install.Install.isInstallAllowed(this)) {
-            Trace.d("no update reason : no reboot");
+            Trace.d("Update Failed : No Reboot");
             this.materialDialog = new MaterialDialog.Builder(this).contentLayout(R.string.not_support_fota_title).a(R.string.not_support_version).footerLayout(R.string.btn_ok).c();
             return;
         }
         int iIntValue = ((Integer) com.foss.fota.update.query.QueryInfo.getInstance(this).getPolicy("install_battery", Integer.class)).intValue();
         int updateTipTextView = iIntValue <= 0 ? 30 : iIntValue;
         if (!com.foss.fota.update.install.Install.a(this, updateTipTextView)) {
-            Trace.d("no update reason : battery not enough");
+            Trace.d("Update Failed : Low Battery");
             this.materialDialog = new MaterialDialog.Builder(this).a(R.layout.dialog_prompt_base, true).footerLayout(R.string.btn_ok).a(new MaterialDialog.DialogActionListener() { // from class: com.foss.fota.GoogleOtaClient.23
                 @Override // com.foss.fota.MaterialDialog.contentLayout
                 public void a(com.foss.fota.MaterialDialog aVar, DialogAction dialogAction) {
@@ -621,10 +623,10 @@ public class GoogleOtaClient extends BaseActivity {
             return;
         }
         if (!com.foss.fota.update.install.Install.contentLayout(this, StorageUtil.popButton(this))) {
-            Trace.d("no update reason : sd card status not illegal");
+            Trace.d("Update Failed : not enough SD card storage or corrupted SD card");
             this.materialDialog = new MaterialDialog.Builder(this).contentLayout(R.string.battery_remove_title).a(R.string.sdcard_crash_or_unmount).footerLayout(R.string.btn_ok).c();
         } else if (com.foss.fota.update.install.Install.getType() && !com.foss.fota.update.install.Install.a(this)) {
-            Trace.d("no update reason : support ab update but not support reboot ab update");
+            Trace.d("Update Failed : AB Reboot not supported");
             EventBus.getDefault().post(new com.foss.fota.update.EventMessage(300, 100, 0L, 421L, "ab"));
         } else {
             this.materialDialog = new MaterialDialog.Builder(this).contentLayout(R.string.not_support_fota_title).a(R.string.update_prompt).footerLayout(R.string.btn_ok).a(new MaterialDialog.DialogActionListener() { // from class: com.foss.fota.GoogleOtaClient.24
@@ -645,6 +647,7 @@ public class GoogleOtaClient extends BaseActivity {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void updateTextView() {
         Trace.d("enter");
         this.materialDialog = new MaterialDialog.Builder(this).a(R.layout.dialog_update_unzip, false).a(false).c();
@@ -652,6 +655,7 @@ public class GoogleOtaClient extends BaseActivity {
         com.foss.fota.update.install.Install.contentLayout(getApplicationContext());
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void progressTextView() {
         Trace.d("enter");
         Status.a(this, 0);
@@ -728,7 +732,7 @@ public class GoogleOtaClient extends BaseActivity {
             @Override // com.foss.fota.MaterialDialog.contentLayout
             public void a(com.foss.fota.MaterialDialog aVar, DialogAction dialogAction) {
                 aVar.cancel();
-                Trace.d("no download reason : user cancel");
+                Trace.d("Download cancelled : user cancel");
                 com.foss.fota.update.report.ReportData.reportQuery((Context) GoogleOtaClient.this, false, UnixStat.DEFAULT_FILE_PERM, (String) null);
             }
         }).progressLayout(R.string.btn_download).contentLayout(new MaterialDialog.DialogActionListener() { // from class: com.foss.fota.GoogleOtaClient.4
@@ -753,6 +757,7 @@ public class GoogleOtaClient extends BaseActivity {
         this.materialDialog.show();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void setQueryType(int type) {
         Trace.d("delay time: " + this.d[type]);
         PreferencesUtils.putInt(this, "ota_install_delay_schedule", this.d[type]);
@@ -809,6 +814,7 @@ public class GoogleOtaClient extends BaseActivity {
         this.materialDialog.show();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void E() {
         final String str = getFilesDir().getParent() + "/shared_prefs/fossfota.xml";
         if (!"mounted".equals(Environment.getExternalStorageState())) {
@@ -833,6 +839,7 @@ public class GoogleOtaClient extends BaseActivity {
         Toast.makeText(this, getString(R.string.export_data) + " to " + file.getAbsolutePath(), 0).show();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void F() {
         if (!"mounted".equals(Environment.getExternalStorageState())) {
             Toast.makeText(this, R.string.sdcard_crash_or_unmount, 0).show();
@@ -850,6 +857,7 @@ public class GoogleOtaClient extends BaseActivity {
         Toast.makeText(this, getString(R.string.start_catch_log) + " to " + file.getAbsolutePath(), 1).show();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void G() {
         Trace.setDebugEnabled(false);
         PreferencesUtils.putBoolean((Context) this, "debug_status", false);
@@ -1189,6 +1197,7 @@ public class GoogleOtaClient extends BaseActivity {
         this.abView.setVisibility(8);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void c(int updateTipTextView) {
         switch (updateTipTextView) {
             case 1:
@@ -1255,6 +1264,7 @@ public class GoogleOtaClient extends BaseActivity {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public void K() {
         Trace.d("enter");
         if (NetWorkUtil.isConnected(this)) {
@@ -1277,6 +1287,7 @@ public class GoogleOtaClient extends BaseActivity {
         com.foss.fota.update.report.ReportData.reportQuery(this, "delay");
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public boolean N() {
         String strB = PreferencesUtils.contentLayout(this, "ota_check_once_day", "");
         String str = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());

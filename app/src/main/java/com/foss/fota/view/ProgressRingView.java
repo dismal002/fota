@@ -7,6 +7,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
+/* JADX INFO: loaded from: classes.dex */
 public class ProgressRingView extends View {
     private RectF a;
     private boolean b;

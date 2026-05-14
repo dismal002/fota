@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import android.database.Cursor;
 
+/* JADX INFO: compiled from: UpdateDBAdapter.java */
+/* JADX INFO: loaded from: classes.dex */
 public class UpdateDBAdapter {
     private static UpdateDBAdapter instance = null;
     private UpdateDBHelper dbHelper;

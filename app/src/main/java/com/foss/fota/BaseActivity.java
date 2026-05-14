@@ -8,6 +8,7 @@ import android.view.View;
 import com.foss.fota.utils.Trace;
 import com.foss.fota.utils.DeviceUtil;
 
+/* JADX INFO: loaded from: classes.dex */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout drawerLayout;
     private int activityStatus;

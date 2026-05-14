@@ -10,6 +10,8 @@ import android.os.PersistableBundle;
 import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 
+/* JADX INFO: compiled from: IntentUtil.java */
+/* JADX INFO: loaded from: classes.dex */
 public class IntentUtil {
     @TargetApi(21)
     public static boolean a(Context context, int i, Class<?> cls, int i2, int i3, String str) {

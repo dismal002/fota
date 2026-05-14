@@ -23,6 +23,8 @@ import com.foss.fota.utils.ActivityStackUtil;
 import de.greenrobot.event.EventBus;
 import org.json.JSONObject;
 
+/* JADX INFO: compiled from: ParserVersion.java */
+/* JADX INFO: loaded from: classes.dex */
 public class ParserVersion {
     public void parse(Context context, RequestResult result) {
         if (result != null) {

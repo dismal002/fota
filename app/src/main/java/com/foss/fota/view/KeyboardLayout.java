@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
+/* JADX INFO: loaded from: classes.dex */
 public class KeyboardLayout extends RelativeLayout {
     private static final String a = KeyboardLayout.class.getSimpleName();
     private boolean b;

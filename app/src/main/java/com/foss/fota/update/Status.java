@@ -20,6 +20,8 @@ import com.foss.fota.utils.StorageUtil;
 import de.greenrobot.event.EventBus;
 import java.io.File;
 
+/* JADX INFO: compiled from: Status.java */
+/* JADX INFO: loaded from: classes.dex */
 public class Status {
     public static void setDownloadingStatus(Context context, VersionModel versionModel) {
         Trace.d(" ");

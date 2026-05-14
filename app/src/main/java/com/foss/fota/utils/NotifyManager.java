@@ -14,6 +14,8 @@ import com.foss.fota.MyApplication;
 import com.foss.fota.R;
 import com.foss.fota.update.query.QueryInfo;
 
+/* JADX INFO: compiled from: NotifyManager.java */
+/* JADX INFO: loaded from: classes.dex */
 public class NotifyManager {
     private static NotifyManager instance = null;
     private NotificationManager notificationManager;

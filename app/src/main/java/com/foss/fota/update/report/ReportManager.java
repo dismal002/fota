@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/* JADX INFO: compiled from: ReportManager.java */
+/* JADX INFO: loaded from: classes.dex */
 public class ReportManager {
     private static ExecutorService executor;
     private static Context context;
@@ -96,6 +98,10 @@ public class ReportManager {
         try {
             List<ReportModel.ReportResult> reports = UpdateDBAdapter.getInstance(context).queryReports(100);
             if (reports != null && reports.size() > 0) {
+                if (!MyApplication.isConnectNetAllowed()) {
+                    Trace.d("Privacy: report blocked because connect_net is false");
+                    return;
+                }
                 Trace.d("record items size= " + reports.size());
                 ArrayList<String> resultList = new ArrayList<>();
                 for (ReportModel.ReportResult report : reports) {
@@ -114,8 +120,9 @@ public class ReportManager {
                     builder.addFormDataPart("imei", DeviceInfoProvider.getInstance(context).getImei1(context));
                     builder.addFormDataPart("imei2", DeviceInfoProvider.getInstance(context).getImei2(context));
                 } else {
-                    builder.addFormDataPart("imei", DeviceInfoProvider.getInstance(context).getImei1(context));
-                    builder.addFormDataPart("imei2", DeviceInfoProvider.getInstance(context).getImei2(context));
+                    Trace.d("Privacy: imei exfiltration blocked");
+                    builder.addFormDataPart("imei", "");
+                    builder.addFormDataPart("imei2", "");
                 }
                 
                 builder.addFormDataPart("connect_type", "" + DeviceInfoProvider.getInstance(context).getApnType(context));
@@ -163,6 +170,12 @@ public class ReportManager {
                     ArrayList<String> resultList = new ArrayList<>();
                     resultList.add(content);
                     
+                    if (!MyApplication.isConnectNetAllowed()) {
+                        Trace.d("Privacy: immediate report blocked because connect_net is false");
+                        ReportManager.this.report(type, content); // Queue for later if allowed
+                        return;
+                    }
+                    
                     String baseUrl = PreferencesUtils.getString(context, "check_url", com.foss.fota.config.ServerApi.PRIMARY_DOMAIN);
                     String url = baseUrl + com.foss.fota.config.ServerApi.REPORT_ENDPOINT;
                     
@@ -175,8 +188,9 @@ public class ReportManager {
                         builder.addFormDataPart("imei", DeviceInfoProvider.getInstance(context).getImei1(context));
                         builder.addFormDataPart("imei2", DeviceInfoProvider.getInstance(context).getImei2(context));
                     } else {
-                        builder.addFormDataPart("imei", DeviceInfoProvider.getInstance(context).getImei1(context));
-                        builder.addFormDataPart("imei2", DeviceInfoProvider.getInstance(context).getImei2(context));
+                        Trace.d("Privacy: imei exfiltration blocked in immediate report");
+                        builder.addFormDataPart("imei", "");
+                        builder.addFormDataPart("imei2", "");
                     }
                     
                     builder.addFormDataPart("connect_type", "" + DeviceInfoProvider.getInstance(context).getApnType(context));

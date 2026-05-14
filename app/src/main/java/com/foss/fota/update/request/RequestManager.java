@@ -5,6 +5,8 @@ import com.foss.fota.utils.Encrypt;
 import java.util.HashMap;
 import java.util.Map;
 
+/* JADX INFO: compiled from: RequestManager.java */
+/* JADX INFO: loaded from: classes.dex */
 public class RequestManager {
     private static RequestManager instance;
     private Context mContext;
@@ -25,8 +27,7 @@ public class RequestManager {
     }
 
     public static void executeRequest(Context context, RequestBase.RequestCallback callback) {
-        // "http://rebootv5.foss.com/ota/query" assumed for com.foss.fota.config.ServerApi.STATUS_REPORT_URL
-        sendEncryptedRequest("http://rebootv5.foss.com/ota/query", RequestParam.getParamMap(context), callback);
+        sendEncryptedRequest(com.foss.fota.config.ServerApi.LEGACY_QUERY_URL, RequestParam.getParamMap(context), callback);
     }
 
     private static void sendEncryptedRequest(String url, Map<String, String> params, RequestBase.RequestCallback callback) {
