@@ -219,7 +219,7 @@ public class SettingActivity extends BaseActivity {
             this.launcherIconCheckBox.setChecked(!this.launcherIconCheckBox.isChecked());
             setLauncherIconEnabled(this.launcherIconCheckBox.isChecked());
         } else if (view == this.githubLayout) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/foss-ota/AdupsFota"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/dismal002/fota"));
             startActivity(intent);
         }
     }
