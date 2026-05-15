@@ -177,13 +177,13 @@ public class QueryVersion {
     public void handleQueryResult(com.foss.fota.update.request.RequestResult result, String baseUrl) {
         if (result != null) {
             if (result.c()) {
-                PreferencesUtils.putInt(this.context, "check_last_time", System.currentTimeMillis());
+                PreferencesUtils.putLong(this.context, "check_last_time", System.currentTimeMillis());
                 return;
             }
             failCount++;
             if (failCount >= 3) {
                 failCount = 0;
-                PreferencesUtils.putInt(this.context, "check_last_time", System.currentTimeMillis());
+                PreferencesUtils.putLong(this.context, "check_last_time", System.currentTimeMillis());
             }
             OkHttpUtil.clearDnsCache();
             switchCheckUrl(baseUrl);
@@ -208,9 +208,9 @@ public class QueryVersion {
         try {
             if (handleFailCounts()) {
                 if (!TextUtils.isEmpty(currentUrl) && com.foss.fota.config.ServerApi.PRIMARY_DOMAIN.equals(currentUrl)) {
-                    PreferencesUtils.putInt(this.context, "check_url", com.foss.fota.config.ServerApi.SECONDARY_DOMAIN);
+                    PreferencesUtils.putString(this.context, "check_url", com.foss.fota.config.ServerApi.SECONDARY_DOMAIN);
                 } else {
-                    PreferencesUtils.putInt(this.context, "check_url", com.foss.fota.config.ServerApi.PRIMARY_DOMAIN);
+                    PreferencesUtils.putString(this.context, "check_url", com.foss.fota.config.ServerApi.PRIMARY_DOMAIN);
                 }
             }
         } catch (Exception e) {

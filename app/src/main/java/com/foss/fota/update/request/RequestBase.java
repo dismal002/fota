@@ -39,7 +39,16 @@ public class RequestBase {
                     .build();
             
             Trace.d("http URL = " + this.url);
-            Response response = OkHttpUtil.execute(request);
+            Response response = null;
+            try {
+                response = OkHttpUtil.execute(request);
+            } catch (IOException e) {
+                Trace.d("http request failed: " + e.getMessage());
+                return result.setSuccess(false)
+                        .setErrorCode(3008)
+                        .setErrorMessage(e.getMessage());
+            }
+
             int code = response.code();
             Trace.d("http response code = " + code);
             

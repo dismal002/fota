@@ -88,7 +88,7 @@ public class Status {
     }
 
     public static void clearUpdateData(Context context) {
-        FileUtil.deleteDir("/data/data/" + context.getPackageName() + "/shared_prefs");
+        context.getSharedPreferences("fota_prefs", Context.MODE_PRIVATE).edit().clear().apply();
         cancelUpdate(context);
     }
 

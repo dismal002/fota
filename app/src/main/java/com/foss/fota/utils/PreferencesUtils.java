@@ -19,7 +19,18 @@ public class PreferencesUtils {
     }
 
     public static String getString(Context context, String key, String defaultValue) {
-        return getPrefs(context).getString(key, defaultValue);
+        try {
+            return getPrefs(context).getString(key, defaultValue);
+        } catch (Exception e) {
+            try {
+                Object value = getPrefs(context).getAll().get(key);
+                if (value != null) {
+                    return String.valueOf(value);
+                }
+            } catch (Exception ignored) {
+            }
+            return defaultValue;
+        }
     }
 
     public static void putInt(Context context, String key, int value) {

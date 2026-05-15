@@ -1000,7 +1000,7 @@ public class GoogleOtaClient extends BaseActivity {
                 } else if (bVar.c() != 0 || bVar.initData() == null) {
                     Toast.makeText(this, getString(R.string.network_error) + "(" + bVar.c() + ")", 1).show();
                 } else {
-                    Toast.makeText(this, getString(R.string.network_error) + "(" + bVar.initData().toString().replaceAll("foss", "xxx") + ")", 1).show();
+                    Toast.makeText(this, getString(R.string.network_error) + "(" + bVar.initData().toString() + ")", Toast.LENGTH_LONG).show();
                 }
             }
         } catch (Exception footerLayout) {
